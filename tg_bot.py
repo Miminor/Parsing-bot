@@ -72,7 +72,7 @@ async def news_every_minute():
                 news = f"{hbold(datetime.fromtimestamp(v['article_date_timestamp']))}\n" \
                        f"{hlink(v['article_title'], v['article_url'])}"
 
-                await bot.send_message(377014314, news, disable_notification=True)
+                await bot.send_message(user_id, news, disable_notification=True)
 
         await asyncio.sleep(20)
 
