@@ -57,7 +57,7 @@ def check_news_update():
 
     fresh_news = {}
     for article in articles_cards:
-        article_url = f'https://www.securitylab.ru/news/{article.get("href")}'
+        article_url = f'https://www.<site>/news/{article.get("href")}'
         article_id = article_url.split("/")[-1][:-4]
 
         if article_id in news_dict:
