@@ -38,7 +38,7 @@ async def get_all_news(message: types.Message):
         await message.answer(news)
 
 
-@dp.message_handler(Text(equals="Последние 5 новостей"))
+@dp.message_handler(Text(equals="Останні 5 новин"))
 async def get_last_five_news(message: types.Message):
     with open("news_dict.json") as file:
         news_dict = json.load(file)
@@ -50,7 +50,7 @@ async def get_last_five_news(message: types.Message):
         await message.answer(news)
 
 
-@dp.message_handler(Text(equals="Свежие новости"))
+@dp.message_handler(Text(equals="Свіжі новини"))
 async def get_fresh_news(message: types.Message):
     fresh_news = check_news_update()
 
@@ -61,7 +61,7 @@ async def get_fresh_news(message: types.Message):
 
             await message.answer(news)
     else:
-        await message.answer("Пока нет свежих новостей")
+        await message.answer("Поки нема свіжих новин")
 
 
 async def news_every_minute():
