@@ -22,7 +22,7 @@ def get_first_news():
     for article in articles_cards:
         article_title = article.find("h2", class_="article-card-title").text.strip()
         article_desc = article.find("p").text.strip()
-        article_url = f'https://www.securitylab.ru/news/{article.get("href")}'
+        article_url = f'https://<site>/news/{article.get("href")}'
 
         article_date_time = article.find("time").get("datetime")
         date_from_iso = datetime.fromisoformat(article_date_time)
