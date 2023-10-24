@@ -14,14 +14,14 @@ dp = Dispatcher(bot)
 
 @dp.message_handler(commands="start")
 async def cmd_start(message: types.Message):
-    start_buttons = ["Все новости", "Последние 5 новостей", "Свежие новости"]
+    start_buttons = ["Всі новини", "Останні 5 новин", "Свіжі новини"]
     keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True)
     keyboard.add(*start_buttons)
 
-    await message.answer("Лента новостей", reply_markup=keyboard)
+    await message.answer("Лента новин", reply_markup=keyboard)
 
 
-@dp.message_handler(Text(equals="Все новости"))
+@dp.message_handler(Text(equals="Всі новини"))
 async def get_all_news(message: types.Message):
     with open("news_dict.json") as file:
         news_dict = json.load(file)
